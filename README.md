@@ -93,10 +93,17 @@ O sistema foi desenvolvido utilizando o framework Laravel, que facilita a implem
     php artisan migrate
     ```
 
-7.  Inicie o servidor de desenvolvimento:
+7.  Adicionando upload de imagem:
+
+    ```bash
+    php artisan storage:link
+    ```
+
+8.  Inicie o servidor de desenvolvimento:
 
     ```bash
     php artisan serve
     ```
 
-8.  Acesse a aplicação no navegador: `http://localhost:8000`
+9.  Acesse a aplicação no navegador: `http://localhost:8000`
+
