@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Storage;
  */
 class PostController extends Controller
 {
-    // ... (index(), show(), destroy() permanecem iguais)
     /**
      * Display a listing of the resource.
      */
@@ -38,9 +37,9 @@ class PostController extends Controller
     {
         $request->validate([
             'nome' => 'required|string|max:255',
-            'email' => 'required|email|unique:posts', // Validando email como único
-            'telefone' => 'nullable|string|max:20', // Validando telefone (opcional)
-            'image' => 'nullable|image|max:2048', // Max 2MB
+            'email' => 'required|email|unique:posts',
+            'telefone' => 'nullable|string|max:20',
+            'image' => 'nullable|image|max:2048',
         ]);
 
         $post = new Post();
@@ -73,7 +72,7 @@ class PostController extends Controller
     {
         $request->validate([
             'nome' => 'required|string|max:255',
-            'email' => 'required|email|unique:posts,email,'.$post->id, // Validando email único, exceto o email do próprio registro
+            'email' => 'required|email|unique:posts,email,'.$post->id,
             'telefone' => 'nullable|string|max:20',
             'image' => 'nullable|image|max:2048',
         ]);
@@ -115,5 +114,4 @@ class PostController extends Controller
         return redirect()->route('posts.index')->with('success', 'Post deleted successfully.');
     }
 
-    // ... (destroy() permanece igual)
 }

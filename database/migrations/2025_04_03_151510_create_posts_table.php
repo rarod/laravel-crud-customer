@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -14,8 +15,8 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('email')->unique(); // Adicionando unique para emails
-            $table->string('telefone')->nullable(); // Tornando telefone opcional
+            $table->string('email')->unique();
+            $table->string('telefone')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });

@@ -1,10 +1,19 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Post
+ * @package App\Models
+ */
 class Post extends Model
 {
-    protected $fillable = ['nome', 'email', 'telefone', 'image']; // Adicionando fillable para permitir mass assignment
+
+    /**
+     * @var string[]
+     */
+    protected $fillable = ['nome', 'email', 'telefone', 'image'];
 }
