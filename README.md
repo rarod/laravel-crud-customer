@@ -1,66 +1,102 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Documentação do Sistema de Cadastro de Clientes
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+1. Introdução
 
-## About Laravel
+Este documento descreve a implementação de um sistema de cadastro de clientes, desenvolvido em PHP utilizando o framework Laravel, seguindo o padrão MVC. O sistema permite a criação, visualização, edição e exclusão de registros de clientes, incluindo o armazenamento e exibição de fotos dos clientes.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+2. Enunciado da Tarefa
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Desenvolver um sistema de cadastro de clientes com as seguintes funcionalidades:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* Tela de visualização da lista de clientes cadastrados.
+* Tela de exclusão de registros de clientes.
+* Formulário para inserção de novos clientes.
+* Formulário para edição de clientes existentes.
+* Persistência dos dados em um banco de dados.
+* Campos obrigatórios no formulário: nome, e-mail, telefone e foto.
+* Upload da foto do cliente para o servidor HTTP.
+* Exibição da miniatura da foto ao lado do nome do cliente na lista de visualização.
+* Utilização da linguagem PHP.
+* Implementação do padrão MVC.
+* Utilização do framework Laravel.
 
-## Learning Laravel
+3. Visão Geral da Implementação
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+O sistema foi desenvolvido utilizando o framework Laravel, que facilita a implementação do padrão MVC e oferece recursos para o desenvolvimento rápido de aplicações web.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+* Model: O Model "Post" representa a tabela "posts" no banco de dados, que armazena os dados dos clientes.
+* Controller: O Controller "PostController" gerencia as requisições HTTP e a lógica de negócios, como a criação, edição, visualização e exclusão de clientes.
+* Views: As Views são responsáveis pela apresentação dos dados ao usuário, utilizando a sintaxe Blade do Laravel.
+* Rotas: O arquivo de rotas define as URLs e seus respectivos Controllers.
+* Banco de Dados: Os dados dos clientes são armazenados em um banco de dados MySQL.
+* Upload de Fotos: As fotos dos clientes são armazenadas no servidor HTTP, e o caminho da foto é armazenado no banco de dados.
+* Miniaturas: As miniaturas das fotos são exibidas ao lado do nome do cliente na lista de visualização.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+4. Funcionalidades
 
-## Laravel Sponsors
+* Listagem de clientes com miniaturas das fotos.
+* Formulário para criação de novos clientes.
+* Formulário para edição de clientes existentes.
+* Exclusão de clientes.
+* Visualização de detalhes de um cliente específico.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+5. Link do Projeto no GitHub
 
-### Premium Partners
+* [https://github.com/rarod/laravel-crud-customer](https://github.com/rarod/laravel-crud-customer)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+6. Passos para Subir o Projeto
 
-## Contributing
+1.  Clone o repositório do GitHub para o seu ambiente local:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    ```bash
+    git clone git@github.com:rarod/laravel-crud-customer.git
+    ```
 
-## Code of Conduct
+2.  Navegue até a pasta do projeto:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    ```bash
+    cd laravel-crud-customer
+    ```
 
-## Security Vulnerabilities
+3.  Instale as dependências do Composer:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    ```bash
+    composer install
+    ```
 
-## License
+4.  Copie o arquivo `.env.example` para `.env` e configure as variáveis de ambiente (banco de dados, etc.):
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    ```bash
+    cp .env.example .env
+    ```
+
+    Edite o arquivo `.env` com as configurações do seu banco de dados:
+
+    ```
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=sua_database
+    DB_USERNAME=seu_usuario
+    DB_PASSWORD=sua_senha
+    ```
+
+5.  Gere a chave da aplicação:
+
+    ```bash
+    php artisan key:generate
+    ```
+
+6.  Execute as migrations do banco de dados:
+
+    ```bash
+    php artisan migrate
+    ```
+
+7.  Inicie o servidor de desenvolvimento:
+
+    ```bash
+    php artisan serve
+    ```
+
+8.  Acesse a aplicação no navegador: `http://localhost:8000`
